@@ -1,0 +1,16 @@
+INSTRUCTIONS FOR PASTING UX PILOT CODE:
+
+1. Open this file in a text editor:
+   - Run: nano paste-here.txt
+   - Or: code paste-here.txt (if using VS Code)
+   - Or: gedit paste-here.txt (if using Ubuntu desktop)
+
+2. Delete these instructions
+
+3. Paste your UX Pilot HTML code here
+
+4. Save the file (Ctrl+S in most editors, or Ctrl+O in nano)
+
+5. Tell me "I've pasted the code in paste-here.txt"
+
+6. I'll read it and create the proper HTML file for you!
