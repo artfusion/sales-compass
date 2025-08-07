@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sales Compass</title>
+    <meta name="description" content="Get in touch with Sales Compass. Reach out today to discuss how we can help transform your sales process with expert coaching and AI-powered solutions.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "ocean-blue": "#0077B6",
+        "platinum-white": "#EAEDED"
+      },
+      "fontFamily": {
+        "roboto": [
+          "Roboto",
+          "sans-serif"
+        ],
+        "sans": [
+          "Inter",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+};</script>
+    <style>
+        body { font-family: 'Inter', sans-serif;
+        }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="bg-white font-sans">
+    
+    <!-- Header -->
+    <header id="header" class="bg-white py-4 px-6 flex items-center justify-between border-b border-gray-200 sticky top-0 z-50">
+        <div class="flex items-center">
+            <div class="flex items-center">
+                <svg class="w-8 h-8 text-ocean-blue" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-2 text-2xl font-medium text-ocean-blue">Sales Compass</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex">
+            <a href="../index.html" class="px-4 py-2 text-gray-700 font-medium hover:text-ocean-blue cursor-pointer">Homepage</a>
+            <a href="services.html" class="px-4 py-2 text-gray-700 font-medium hover:text-ocean-blue cursor-pointer">Services</a>
+            <a href="sales-coaching.html" class="px-4 py-2 text-gray-700 font-medium hover:text-ocean-blue cursor-pointer">Sales Coaching</a>
+            <a href="ai-automation.html" class="px-4 py-2 text-gray-700 font-medium hover:text-ocean-blue cursor-pointer">AI Automation</a>
+            <a href="case-studies.html" class="px-4 py-2 text-gray-700 font-medium hover:text-ocean-blue cursor-pointer">Case Studies</a>
+            <a href="contact.html" class="px-4 py-2 text-ocean-blue font-medium border-b-2 border-ocean-blue cursor-pointer">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <button class="text-gray-700">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section id="contact-hero" class="bg-platinum-white py-16 px-6 h-[400px] flex items-center">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-medium text-gray-800 mb-6">Get in Touch</h1>
+                    <p class="text-lg text-gray-600 mb-8">Have questions about our services or ready to transform your sales process? We're here to help. Reach out today and let's navigate your sales success together.</p>
+                </div>
+                <div class="flex justify-center">
+                    <img class="rounded-lg shadow-xl" src="../uxpilot/assets/images/contact-hero.png" alt="sales team in meeting, discussing strategy with client, modern office with ocean blue accents">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form-section" class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div id="contact-info">
+                    <h2 class="text-3xl font-medium text-gray-800 mb-6">Contact Information</h2>
+                    <p class="text-gray-600 mb-8">Our team is ready to answer your questions and help you find the right solutions for your business needs.</p>
+                    
+                    <div class="space-y-8 mb-10">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-envelope text-ocean-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 text-lg">Email Us</h3>
+                                <span class="text-ocean-blue hover:underline cursor-pointer">info@salescompass.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-phone text-ocean-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 text-lg">Call Us</h3>
+                                <span class="text-ocean-blue hover:underline cursor-pointer">+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-location-dot text-ocean-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 text-lg">Visit Us</h3>
+                                <p class="text-gray-600">123 Business Avenue, Suite 200<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="social-media">
+                        <h3 class="text-xl font-medium text-gray-800 mb-4">Connect With Us</h3>
+                        <div class="flex space-x-5">
+                            <span class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-ocean-blue hover:text-white transition-colors duration-300 cursor-pointer">
+                                <i class="fa-brands fa-linkedin text-ocean-blue text-xl hover:text-white"></i>
+                            </span>
+                            <span class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-ocean-blue hover:text-white transition-colors duration-300 cursor-pointer">
+                                <i class="fa-brands fa-twitter text-ocean-blue text-xl hover:text-white"></i>
+                            </span>
+                            <span class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-ocean-blue hover:text-white transition-colors duration-300 cursor-pointer">
+                                <i class="fa-brands fa-facebook text-ocean-blue text-xl hover:text-white"></i>
+                            </span>
+                            <span class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-ocean-blue hover:text-white transition-colors duration-300 cursor-pointer">
+                                <i class="fa-brands fa-instagram text-ocean-blue text-xl hover:text-white"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="inquiry-form" class="bg-white p-8 rounded-lg border border-gray-200 shadow-md">
+                    <h3 class="text-2xl font-medium text-gray-800 mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                                <input type="text" id="first-name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue" required="">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name*</label>
+                                <input type="text" id="last-name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue" required="">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
+                            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue" required="">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                            <input type="text" id="company" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Interested In*</label>
+                            <select id="service" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue" required="">
+                                <option value="" selected="" disabled="">Select a service</option>
+                                <option value="sales-infrastructure">Sales Infrastructure</option>
+                                <option value="sales-coaching">Sales Coaching</option>
+                                <option value="ai-automation">AI Automation</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message*</label>
+                            <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ocean-blue" required=""></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="flex items-start">
+                                <input type="checkbox" class="mt-1 mr-2">
+                                <span class="text-sm text-gray-600">I agree to receive communications from Sales Compass. You can unsubscribe at any time. View our <span class="text-ocean-blue hover:underline cursor-pointer">Privacy Policy</span>.</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 bg-ocean-blue text-white font-medium rounded-md hover:bg-blue-700 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-platinum-white py-16 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-medium text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our services and how we can help your business.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div id="faq-1" class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-800 mb-3">How quickly can we expect results after implementing your solutions?</h3>
+                    <p class="text-gray-600">Most clients begin seeing measurable improvements within 4-6 weeks of implementation. However, the timeline can vary based on your specific business needs and the solutions implemented.</p>
+                </div>
+                
+                <div id="faq-2" class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-800 mb-3">Do you offer customized solutions for specific industries?</h3>
+                    <p class="text-gray-600">Yes, we tailor our services to meet the unique needs of various industries. Our team has experience across sectors including technology, healthcare, finance, manufacturing, and more.</p>
+                </div>
+                
+                <div id="faq-3" class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-800 mb-3">What is the typical onboarding process for new clients?</h3>
+                    <p class="text-gray-600">Our onboarding process begins with a comprehensive assessment of your current sales processes, followed by strategy development, implementation planning, and training. The entire process typically takes 2-3 weeks.</p>
+                </div>
+                
+                <div id="faq-4" class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-800 mb-3">How does your AI automation integrate with existing CRM systems?</h3>
+                    <p class="text-gray-600">Our AI solutions are designed to integrate seamlessly with popular CRM platforms including Salesforce, HubSpot, Microsoft Dynamics, and others. We also offer custom integration options for proprietary systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Location Section -->
+    <section id="location" class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-medium text-gray-800 mb-4">Our Office</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Visit our headquarters in the heart of San Francisco's business district.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div id="map" class="h-[400px] rounded-lg overflow-hidden shadow-md">
+                    <img class="w-full h-full object-cover" src="../uxpilot/assets/images/contact-map.png" alt="map of San Francisco business district with location pin, satellite view with streets">
+                </div>
+                
+                <div id="office-info">
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">Sales Compass Headquarters</h3>
+                    <p class="text-gray-600 mb-6">Our modern office space is designed to foster collaboration and innovation, reflecting our approach to sales excellence.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-ocean-blue mt-1 mr-3"></i>
+                            <p class="text-gray-600">123 Business Avenue, Suite 200<br>San Francisco, CA 94107</p>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-clock text-ocean-blue mr-3"></i>
+                            <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday - Sunday: Closed</p>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-car text-ocean-blue mr-3"></i>
+                            <p class="text-gray-600">Parking available in the building garage</p>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-train-subway text-ocean-blue mr-3"></i>
+                            <p class="text-gray-600">2 blocks from Market Street BART station</p>
+                        </div>
+                    </div>
+                    
+                    <span class="inline-flex items-center px-6 py-3 bg-ocean-blue text-white font-medium rounded-md hover:bg-blue-700 transition cursor-pointer" target="_blank">
+                        <i class="fa-solid fa-directions mr-2"></i>
+                        Get Directions
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="bg-ocean-blue py-16 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-medium text-white mb-6">Ready to Transform Your Sales Process?</h2>
+            <p class="text-blue-100 max-w-2xl mx-auto mb-8">Schedule a free 30-minute consultation with our experts and discover how Sales Compass can help you navigate toward greater sales success.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-8 py-4 bg-white text-ocean-blue font-medium rounded-md hover:bg-blue-50 transition inline-block cursor-pointer">
+                    Contact Us Now
+                </span>
+                <span class="px-8 py-4 border-2 border-white text-white font-medium rounded-md hover:bg-blue-800 transition inline-block cursor-pointer">
+                    <i class="fa-solid fa-phone mr-2"></i>
+                    Call Directly
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-medium">Sales Compass</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Navigating businesses toward sales excellence through expert coaching and AI-powered solutions.</p>
+                    <div class="flex space-x-4">
+                        <span class="text-gray-400 hover:text-white transition cursor-pointer">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-white transition cursor-pointer">
+                            <i class="fa-brands fa-twitter text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-white transition cursor-pointer">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-white transition cursor-pointer">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Homepage</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Services</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Sales Coaching</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">AI Automation</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Case Studies</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Contact</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Blog</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Whitepapers</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Webinars</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">FAQ</span></li>
+                        <li><span class="text-gray-400 hover:text-white transition cursor-pointer">Support</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">info@salescompass.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mr-2 mt-1 text-gray-400"></i>
+                            <span class="text-gray-400">123 Business Avenue,<br>Suite 200<br>San Francisco, CA 94107</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2023 Sales Compass. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
