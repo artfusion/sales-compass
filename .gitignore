@@ -1,0 +1,39 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (for future when we add build tools)
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+
+# WordPress specific (for future migration)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Python server
+__pycache__/
+*.pyc
