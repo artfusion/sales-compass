@@ -11,7 +11,13 @@ The site is currently built and deployed as a high-performance static HTML/CSS/J
 ```
 sales-compass/
 ├── index.html           # Homepage
-├── pages/               # Additional pages (Services, Coaching, AI, etc.)
+├── ai-automation/       # AI Automation page
+├── case-studies/        # Case Studies page
+├── contact/             # Contact page
+├── privacy-policy/      # Privacy Policy page
+├── sales-coaching/      # Sales Coaching page
+├── services/            # Services page
+├── terms-of-service/    # Terms of Service page
 ├── assets/             
 │   ├── css/            # Stylesheets
 │   ├── js/             # JavaScript files
