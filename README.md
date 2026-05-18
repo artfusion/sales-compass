@@ -1,45 +1,41 @@
 # Sales Compass
 
-A modern marketing website for Sales Compass, currently built as a static HTML/CSS/JS site with plans to migrate to WordPress (Kadence theme) in the future.
+A modern marketing website for Sales Compass.
+
+## Current Status
+
+The site is currently built and deployed as a high-performance static HTML/CSS/JS site using Tailwind CSS for styling. While the initial plan included a WordPress migration, the current focus is on maintaining and expanding this lightweight, custom-built architecture.
 
 ## Project Structure
 
 ```
 sales-compass/
 ├── index.html           # Homepage
-├── pages/               # Additional pages
+├── pages/               # Additional pages (Services, Coaching, AI, etc.)
 ├── assets/             
 │   ├── css/            # Stylesheets
 │   ├── js/             # JavaScript files
 │   ├── images/         # Images and media
 │   └── fonts/          # Custom fonts
-├── components/         # Reusable HTML components
-├── wp-prep/           # WordPress preparation files
-│   └── templates/     # Future PHP template structures
-└── docs/              # Documentation
+└── redesign/           # Deployment staging folder
 ```
+
+## Deployment
+
+The site is deployed to:
+- **Live Production**: [https://salescompass.net](https://salescompass.net)
+- **Source Control**: [https://github.com/artfusion/sales-compass](https://github.com/artfusion/sales-compass)
+
+Deployment is handled via direct SSH upload to the production server.
+
+## Tech Stack
+
+- **Frontend**: Static HTML5, Tailwind CSS (via CDN for rapid prototyping), Vanilla JavaScript
+- **Icons**: Font Awesome 6
+- **Fonts**: Google Fonts (Inter)
 
 ## Development
 
 To view the site locally:
 1. Open `index.html` in your browser, or
 2. Use a local server: `python3 -m http.server 3000`
-
-## WordPress Migration Path
-
-The project structure is designed to facilitate future migration to WordPress:
-- CSS can be enqueued in WordPress theme
-- JS files can be registered as WordPress scripts
-- HTML structure can be converted to PHP templates
-- Components can become WordPress template parts
-
-## Tech Stack
-
-- **Current**: Static HTML, CSS, JavaScript
-- **Future**: WordPress with Kadence theme system
-
-## Getting Started
-
-1. Clone the repository
-2. Open index.html in your browser
-3. Or serve locally on port 3000: `python3 -m http.server 3000`
