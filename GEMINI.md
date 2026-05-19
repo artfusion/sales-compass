@@ -14,5 +14,5 @@
 
 ## Deployment Command Template
 ```bash
-scp -P 65002 [files] u783182544@82.29.157.128:domains/salescompass.net/public_html/[path]
+scp -P 65002 [files] u783182544@82.29.157.128:domains/salescompass.net/public_html/[path] && ssh -p 65002 u783182544@82.29.157.128 "chmod 644 domains/salescompass.net/public_html/[path]"
 ```
