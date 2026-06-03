@@ -1,0 +1,21 @@
+name: Deploy theme to Hostinger
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy theme via rsync
+        env:
+          SSH_PASS: ${{ secrets.HOSTINGER_SSH_PASS }}
+        run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "$SSH_PASS" rsync -avz --delete \
+            -e "ssh -p 65002 -o StrictHostKeyChecking=no" \
+            wp-content/themes/sales-compass/ \
+            u783182544@82.29.157.128:domains/salescompass.net/public_html/wp-content/themes/sales-compass/
