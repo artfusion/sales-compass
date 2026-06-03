@@ -1,56 +1,40 @@
 # Handoff
 
-## M3 — COMPLETE ✅
+## Site is LIVE ✅ — https://salescompass.net
 
-All SCW-43→54 merged and marked Done in Linear.
+WordPress on Hostinger, all 8 pages live, theme + WPForms inquiry form rendering.
 
-## Live Deployment — IN PROGRESS
+## Deployment architecture (SCW-70) — DONE
 
-**Hostinger Status:** WordPress installed and running at https://salescompass.net
+**The theme now lives in its own repo:** `artfusion/sales-compass-theme` (repo root = theme).
+Hostinger's native "Deploy from GitHub" auto-deploys its `main` branch into
+`public_html/wp-content/themes/sales-compass/` — scoped to that dir, so **WP core is never touched**.
 
-✅ **Completed:**
-- Theme uploaded to `public_html/wp-content/themes/sales-compass/`
-- Theme activated (Sales Compass theme is live)
-- WPForms Lite installed and activated
-- All 8 pages created (Home ID=5, Services=6, Sales-Coaching=7, AI-Automation=8, Case-Studies=9, Contact=10, Privacy=3, ToS=12)
-- Media uploads synced from Studio
-- URLs fixed: siteurl/home set to https://salescompass.net
-- All localhost:8882 references replaced with https://salescompass.net
+- Push to `sales-compass-theme` main → live theme updates automatically.
+- The theme dir on the server is now a Hostinger-managed git checkout.
+- **Never** point a Hostinger deploy at `public_html` root or connect it to this monorepo — that destructively wipes WP core (happened twice during this work).
+- GitHub Actions over SSH was abandoned: Hostinger firewalls SSH from GitHub runner IPs (connection timeouts).
 
-⚠️ **MANUAL WORK NEEDED:**
-- Form embedding: setup-pages.php created the form (ID=13) but placeholder search failed on pages with different IDs. Home (ID=5) and Contact (ID=10) need the form block manually added via WP admin at https://salescompass.net/wp-admin.
-  - Edit each page, add a `wp:shortcode` block with `[wpforms id="13"]`
-- GitHub Actions workflow created ([feature/scw-github-actions](https://github.com/artfusion/sales-compass/pull/new/feature/scw-github-actions)) — needs PR merge + SSH secret added to GitHub
-- Hostinger's git autodeploy must be **disabled** in hPanel (it will be replaced by GitHub Actions)
+### Local dev for the theme
+- Clone: `/Users/michael/Development/Websites/sales-compass-theme` ← **edit the theme here**
+- WP Studio symlink (`~/Studio/sales-compass/wp-content/themes/sales-compass`) points at that clone.
+- Edit → preview in Studio (localhost:8882) → commit + push → Hostinger auto-pulls.
 
-## Next Steps (User Action Required)
+### This monorepo
+- Theme removed (now in the separate repo). Holds docs + `static/` reference site only.
+- Dead `.github/workflows/deploy-theme.yml` removed.
 
-1. **Add SSH secret to GitHub:**
-   - Go to repo Settings → Secrets and variables → Actions → New repository secret
-   - Name: `HOSTINGER_SSH_PASS`
-   - Value: `$Benzli123%`
+## Live server reference
+- SSH: `ssh -p 65002 u783182544@82.29.157.128`, path `domains/salescompass.net/public_html`
+- DB: `u783182544_zGor6`
+- Page IDs: home=6, services=7, sales-coaching=8, ai-automation=9, case-studies=10, contact=11, privacy-policy=3, terms-of-service=13
+- WPForms Inquiry Form ID=14, embedded on home (6) + contact (11)
+- SSH is flaky (Hostinger rate-limits rapid auth) — space out calls; consider key auth.
 
-2. **Merge GitHub Actions PR:**
-   - https://github.com/artfusion/sales-compass/pull/new/feature/scw-github-actions
-   - This enables automatic theme deployment on future pushes to main
+## Known bug → needs a ticket (in the THEME repo now)
+`setup/setup-forms.php` hardcodes Studio page IDs (`49 => home, 54 => contact`) for the form-embed
+step, so it silently skips on any other DB. Live pages were fixed with a one-off slug-based script.
+Fix: change the embed loop to look up pages by slug via `get_page_by_path()`.
 
-3. **Disable Hostinger autodeploy in hPanel:**
-   - Log into Hostinger hPanel
-   - Navigate to your domain's git settings
-   - Disable the built-in autodeploy (GitHub Actions now handles it)
-
-4. **Manually add forms to pages** (temporary — until we can re-run setup):
-   - Log into https://salescompass.net/wp-admin
-   - Edit Home page (ID=5) and Contact page (ID=10)
-   - Add a Shortcode block with `[wpforms id="13"]` to display the inquiry form
-
-## Studio state
-
-- WP Studio: `http://localhost:8882` (reference; not deployed)
-- All 8 pages + WPForms form structure defined in theme setup scripts
-- Media files synced to Hostinger
-
-## Blockers / Notes
-
-- SSH password auth was flaky (multiple session drops) — consider using SSH key auth instead of password for future work
-- Setup scripts created pages with different IDs on Hostinger vs. Studio (different DB state) — placeholder search in setup-pages.php should handle this more gracefully
+## Blockers / open questions
+None. Site is live and the deploy pipeline is verified.
