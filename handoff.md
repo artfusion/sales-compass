@@ -29,7 +29,12 @@ Hostinger's native "Deploy from GitHub" auto-deploys its `main` branch into
 - DB: `u783182544_zGor6`
 - Page IDs: home=6, services=7, sales-coaching=8, ai-automation=9, case-studies=10, contact=11, privacy-policy=3, terms-of-service=13
 - WPForms Inquiry Form ID=14, embedded on home (6) + contact (11)
-- SSH is flaky (Hostinger rate-limits rapid auth) — space out calls; consider key auth.
+- SSH is flaky (Hostinger rate-limits rapid auth) — space out calls / retry loop; consider key auth.
+
+## ⚠️ Caching gotcha (Hostinger CDN)
+The live site sits behind **Hostinger's CDN edge cache** (`x-hcdn-cache-status: HIT`, `max-age` 7 days). After any content/theme change, the origin updates immediately but **visitors keep seeing the cached page until the CDN is purged**. `wp cache flush` does NOT purge it (it's an account-level CDN, not a WP plugin).
+- **To verify a change at origin:** `curl "https://salescompass.net/?v=$(date +%s)"` — a query string bypasses the edge cache.
+- **To publish to everyone:** purge in **hPanel → Performance → CDN** (or Advanced → Cache Manager → Purge), or wait out the 7-day TTL.
 
 ## Repo tidiness (as of this session)
 - **0 open PRs, 0 Actions runs, 0 stale branches.** Failed deploy-workflow runs were deleted.
