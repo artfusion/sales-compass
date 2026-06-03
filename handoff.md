@@ -36,6 +36,14 @@ The live site sits behind **Hostinger's CDN edge cache** (`x-hcdn-cache-status: 
 - **To verify a change at origin:** `curl "https://salescompass.net/?v=$(date +%s)"` — a query string bypasses the edge cache.
 - **To publish to everyone:** purge in **hPanel → Performance → CDN** (or Advanced → Cache Manager → Purge), or wait out the 7-day TTL.
 
+## Hostinger MCP (API) — connected ✅
+The official Hostinger MCP is wired into Claude Code (local scope, `~/.claude.json`, project `sales-compass`): `npx hostinger-api-mcp@latest`, bearer token in `API_TOKEN` env. Verified working (`hosting_listWebsitesV1` returns the account).
+- **Token:** create/rotate at https://hpanel.hostinger.com/profile/api. ⚠️ Tokens inherit **full account permissions** (no granular scopes) — set an expiry; treat as a secret.
+- **Gotcha:** edit the token **only while Claude Code is fully quit** — the running app rewrites `~/.claude.json` on restart and clobbers live edits.
+- **Useful tools:** `hosting_deployWordpressTheme` / `…Plugin` (deploy via API — possible alternative to the git native deploy), DNS record management (`DNS_getDNSRecordsV1` / `…update…`), subdomains, databases, domains/nameservers.
+- **Not covered:** CDN cache purge (still hPanel/dev-mode).
+- Server root dir (from API): `/home/u783182544/domains/salescompass.net/public_html`.
+
 ## Repo tidiness (as of this session)
 - **0 open PRs, 0 Actions runs, 0 stale branches.** Failed deploy-workflow runs were deleted.
 - PRs #16 and #20 (abandoned SSH-over-CI attempts) are **closed + annotated** as superseded by SCW-70. GitHub can't delete PRs, so they remain under the "Closed" filter only — the default Open view is empty. Not loose ends.
@@ -44,9 +52,6 @@ The live site sits behind **Hostinger's CDN edge cache** (`x-hcdn-cache-status: 
 1. **Rotate the Hostinger SSH password** in hPanel — it was shared in chat multiple times during recovery. (Current password still works for SSH ops.)
 2. **File a ticket in the THEME repo** for the `setup/setup-forms.php` bug: it hardcodes Studio page IDs (`49 => home, 54 => contact`) for the form-embed step, so it silently skips on any other DB. Live pages were fixed with a one-off slug-based script. Fix: switch the embed loop to `get_page_by_path()` slug lookup. (Script now lives in `artfusion/sales-compass-theme`.)
 3. **Decide on [SCW-63](https://linear.app/artfusion/issue/SCW-63)** ("decide WP hosting approach") — still In Progress; its deploy-mechanism portion is resolved by SCW-70. Close it, or keep open for other launch tasks (DNS/SSL/etc.).
-
-## NOTE for next session
-This handoff was updated **uncommitted** in the working tree (no active feature branch after the SCW-70 merge; avoided a throwaway PR). Commit it onto the next feature branch you create, or discard if stale.
 
 ## Blockers
 None. Site is live and the deploy pipeline is verified end-to-end.
