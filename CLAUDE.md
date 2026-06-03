@@ -54,7 +54,7 @@ No build step, package manager, or compilation required. Static site files live 
 
 WP Studio site: `http://localhost:8882` (admin: `http://localhost:8882/wp-admin`)
 Site path: `/Users/michael/Studio/sales-compass/` — theme dir: `wp-content/themes/`
-Theme source (symlinked): `wp-content/themes/sales-compass/` in this repo
+Theme source (symlinked): the standalone theme repo cloned at `/Users/michael/Development/Websites/sales-compass-theme` (Studio's `wp-content/themes/sales-compass` symlink points there). **The theme no longer lives in this monorepo** — see the Theme repo note below.
 
 CLI: `studio wp <wp-cli-command> --path="$HOME/Studio/sales-compass"` (or run from the site directory).
 
@@ -64,9 +64,11 @@ CLI: `studio wp <wp-cli-command> --path="$HOME/Studio/sales-compass"` (or run fr
 
 Static marketing site (8 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. **Active migration to WordPress/Twenty Twenty-Five theme** (see WordPress Studio section).
 
-**Repo structure (post-restructure for Hostinger deployment):**
-- `wp-content/themes/sales-compass/` — the WordPress block theme (deploys to `public_html/wp-content/themes/sales-compass/`)
+**Repo structure:**
 - `static/` — static HTML reference site (not deployed to WP; local dev only)
+- The WordPress block theme lives in a **separate repo** (see below), not here.
+
+**Theme repo (separate):** The block theme is its own repo — `artfusion/sales-compass-theme` — whose root *is* the theme. Hostinger's native "Deploy from GitHub" auto-deploys it (branch `main`) into `public_html/wp-content/themes/sales-compass/`. Because Hostinger's deploy is scoped to that target directory, WP core/plugins/uploads/DB are never touched. Local clone: `/Users/michael/Development/Websites/sales-compass-theme` (edit there; Studio symlink points at it). Theme work uses SCW tickets just like this repo.
 
 **Static site pages** (under `static/`, directory-based clean URLs):
 - `static/index.html` — Homepage
@@ -92,7 +94,13 @@ Static marketing site (8 production pages) built with HTML + Tailwind CSS (CDN) 
 
 ## Deployment
 
-Live site: **https://salescompass.net**, hosted on Hostinger. Deployment is a **post-merge publish step** — only `main` (after a PR squash-merges) is deployed, never an arbitrary branch or unmerged work. SSH/SCP server details and the deploy command template live in `GEMINI.md`.
+Live site: **https://salescompass.net**, hosted on Hostinger.
+
+**Theme deploys** are automatic via Hostinger's native "Deploy from GitHub": pushes to `main` of the separate `artfusion/sales-compass-theme` repo deploy into `public_html/wp-content/themes/sales-compass/` (scoped to that dir — WP core is never touched). Do **not** reconnect Hostinger's git deploy to *this* monorepo or point any deploy target at `public_html` root — that destructively wipes WordPress core (it happened twice; see SCW-70).
+
+**Note:** Hostinger SSH is firewalled to allowed IPs — GitHub Actions runners cannot reach it (connections time out), which is why CI-over-SSH was abandoned in favor of native deploy. SSH from a whitelisted IP still works for manual ops; server details in `GEMINI.md`.
+
+This monorepo (docs, static reference site) has no automated deploy.
 
 ## Branch model
 
