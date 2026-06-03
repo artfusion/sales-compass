@@ -6,28 +6,25 @@ SCW-43→50 merged ([PR #12](https://github.com/artfusion/sales-compass/pull/12)
 
 ---
 
-## M3 Batch B — DONE ✅ (awaiting PR merge)
+## M3 — COMPLETE ✅
 
-**Branch to create:** `feature/scw-51-54-wpforms`
-**Tickets:** SCW-51, SCW-52, SCW-53, SCW-54
+All SCW-43→54 merged and marked Done in Linear ([PR #12](https://github.com/artfusion/sales-compass/pull/12), [PR #13](https://github.com/artfusion/sales-compass/pull/13)).
 
-### What Batch B does
-
-- **SCW-51** — Install WPForms Lite plugin
-- **SCW-52** — Build inquiry form (Name, Email, Company, Interested In, Message)
-- **SCW-53** — Embed form on Homepage (ID 49) + Contact (ID 54), replacing the `<em>Inquiry form will be embedded here (SCW-53).</em>` placeholder paragraphs
-- **SCW-54** — Final verification: all 8 pages 200, homepage correct, form submits, nav hamburger ≤767px, FAQ Details open/close
-
-### Studio state at handoff
+### Studio state
 
 - WP Studio: `http://localhost:8882`
-- All 8 pages published, IDs: home=49, services=50, sales-coaching=25, ai-automation=19, case-studies=53, contact=54, privacy-policy=3, terms-of-service=56
-- WPForms: NOT yet installed
-- Nav hamburger: not yet visually verified at ≤767px (Chrome extension limitation)
+- All 8 pages published with block content + `page-no-title` template
+- `show_on_front=page`, `page_on_front=49`
+- WPForms Lite active; Inquiry Form ID=57 embedded on home (49) + contact (54) via `wp:shortcode` block
+- Note: `wp:wpforms/form-selector` Gutenberg block does not render in FSE block-theme context — shortcode is the fix
 
-### Blockers / open questions
+### One outstanding item
 
-None.
+Nav hamburger overlay at ≤767px was not visually verified (Chrome extension can't reach mobile viewport). Verify manually in browser DevTools before deploying to production.
+
+### Next milestone
+
+M4 — check Linear for upcoming tickets.
 
 ## Studio state
 
