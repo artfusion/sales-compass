@@ -1,9 +1,11 @@
 # Project Instructions: Sales Compass
 
-## Deployment Workflow
-- **Automatic Commits:** Always commit any code changes to Git immediately. Use descriptive commit messages.
-- **Automatic Pushes:** Always push committed changes to the `main` branch on GitHub.
-- **Live Deployment:** Always deploy changes live to Hostinger via SSH after pushing to GitHub.
+## Workflow
+
+Work follows the PR-first discipline in `CLAUDE.md` — no direct commits to `main`:
+- **Ticket first:** every change starts from an SCW-XX Linear ticket.
+- **Feature branch → PR:** work on `feature/scw-XX-slug`, open a PR, merge via `gh pr merge --squash --delete-branch`.
+- **Deploy is post-merge:** only after a PR is squash-merged into `main` do you deploy that `main` state live to Hostinger via SSH. Deploy is the publish step, never an auto-push of unmerged work.
 
 ## Deployment Details
 - **Server:** 82.29.157.128

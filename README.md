@@ -4,7 +4,7 @@ A modern marketing website for Sales Compass.
 
 ## Current Status
 
-The site is currently built and deployed as a high-performance static HTML/CSS/JS site using Tailwind CSS for styling. While the initial plan included a WordPress migration, the current focus is on maintaining and expanding this lightweight, custom-built architecture.
+The site is currently built and deployed as a high-performance static HTML/CSS/JS site using Tailwind CSS for styling, live at [salescompass.net](https://salescompass.net) on Hostinger. **Migration to WordPress (Twenty Twenty-Five theme) is now the active direction** — the static site remains the live product during the transition. Local WordPress development happens in WordPress Studio (see `CLAUDE.md`).
 
 ## Project Structure
 
