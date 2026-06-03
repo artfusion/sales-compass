@@ -50,16 +50,17 @@ CLI: `studio wp <wp-cli-command>` from the site directory.
 
 ## Architecture
 
-Static marketing site (6 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. Planned migration to WordPress/Twenty Twenty-Five theme.
+Static marketing site (8 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. **Active migration to WordPress/Twenty Twenty-Five theme** (see WordPress Studio section).
 
-**Pages:**
+**Pages** (directory-based clean URLs — each is an `index.html` in its own folder):
 - `index.html` — Homepage
-- `pages/services.html`, `pages/sales-coaching.html`, `pages/ai-automation.html`, `pages/case-studies.html`, `pages/contact.html`
+- `services/`, `sales-coaching/`, `ai-automation/`, `case-studies/`, `contact/`, `privacy-policy/`, `terms-of-service/`
 
 **Assets:**
 - `assets/css/main.css` — Design system with CSS custom properties, structured for future WordPress enqueuing
 - `assets/js/main.js` — IIFE pattern, exposes `window.SalesCompass`, handles navigation and smooth scroll
 - `assets/images/` — Production images
+- `redesign/` — Full duplicate of the site used as a deployment staging area
 - `uxpilot/` — UX Pilot design mockups (reference only, not production)
 
 ## Key Conventions
@@ -69,9 +70,13 @@ Static marketing site (6 production pages) built with HTML + Tailwind CSS (CDN) 
 - `platinum-white: #EAEDED`
 - Fonts: Inter (sans), Roboto
 
-**Navigation paths:** Pages in `pages/` use `../` relative paths to reference root-level assets and `../index.html` for home.
+**Navigation paths:** Directory-based links. The homepage links to subpages with bare paths (`services/`, `contact/`); subpages link back to root and siblings with `../` (`../`, `../contact/`) and reference root-level assets with `../assets/...`.
 
 **WordPress migration:** CSS uses BEM-like class naming (`.btn-primary`, `.nav-link`) and custom properties designed for WordPress `wp_enqueue_style`. JS uses `window.SalesCompass` namespace for WP script compatibility.
+
+## Deployment
+
+Live site: **https://salescompass.net**, hosted on Hostinger. Deployment is a **post-merge publish step** — only `main` (after a PR squash-merges) is deployed, never an arbitrary branch or unmerged work. SSH/SCP server details and the deploy command template live in `GEMINI.md`.
 
 ## Branch model
 
