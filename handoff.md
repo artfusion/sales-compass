@@ -1,41 +1,56 @@
 # Handoff
 
-## M3 Batch A — DONE ✅
-
-SCW-43→50 merged ([PR #12](https://github.com/artfusion/sales-compass/pull/12)), all tickets marked Done in Linear.
-
----
-
 ## M3 — COMPLETE ✅
 
-All SCW-43→54 merged and marked Done in Linear ([PR #12](https://github.com/artfusion/sales-compass/pull/12), [PR #13](https://github.com/artfusion/sales-compass/pull/13)).
+All SCW-43→54 merged and marked Done in Linear.
 
-### Studio state
+## Live Deployment — IN PROGRESS
 
-- WP Studio: `http://localhost:8882`
-- All 8 pages published with block content + `page-no-title` template
-- `show_on_front=page`, `page_on_front=49`
-- WPForms Lite active; Inquiry Form ID=57 embedded on home (49) + contact (54) via `wp:shortcode` block
-- Note: `wp:wpforms/form-selector` Gutenberg block does not render in FSE block-theme context — shortcode is the fix
+**Hostinger Status:** WordPress installed and running at https://salescompass.net
 
-### All verification items complete ✅
+✅ **Completed:**
+- Theme uploaded to `public_html/wp-content/themes/sales-compass/`
+- Theme activated (Sales Compass theme is live)
+- WPForms Lite installed and activated
+- All 8 pages created (Home ID=5, Services=6, Sales-Coaching=7, AI-Automation=8, Case-Studies=9, Contact=10, Privacy=3, ToS=12)
+- Media uploads synced from Studio
+- URLs fixed: siteurl/home set to https://salescompass.net
+- All localhost:8882 references replaced with https://salescompass.net
 
-Nav hamburger verified: `overlayMenu:mobile` is configured in `parts/header.html`. Breakpoint is **< 600px** (WP Navigation block default). Hamburger (☰) shows, overlay opens with all 6 links, × closes it. Tested via JS DOM inspection + CSS override simulation.
+⚠️ **MANUAL WORK NEEDED:**
+- Form embedding: setup-pages.php created the form (ID=13) but placeholder search failed on pages with different IDs. Home (ID=5) and Contact (ID=10) need the form block manually added via WP admin at https://salescompass.net/wp-admin.
+  - Edit each page, add a `wp:shortcode` block with `[wpforms id="13"]`
+- GitHub Actions workflow created ([feature/scw-github-actions](https://github.com/artfusion/sales-compass/pull/new/feature/scw-github-actions)) — needs PR merge + SSH secret added to GitHub
+- Hostinger's git autodeploy must be **disabled** in hPanel (it will be replaced by GitHub Actions)
 
-### Next milestone
+## Next Steps (User Action Required)
 
-M4 — check Linear for upcoming tickets.
+1. **Add SSH secret to GitHub:**
+   - Go to repo Settings → Secrets and variables → Actions → New repository secret
+   - Name: `HOSTINGER_SSH_PASS`
+   - Value: `$Benzli123%`
+
+2. **Merge GitHub Actions PR:**
+   - https://github.com/artfusion/sales-compass/pull/new/feature/scw-github-actions
+   - This enables automatic theme deployment on future pushes to main
+
+3. **Disable Hostinger autodeploy in hPanel:**
+   - Log into Hostinger hPanel
+   - Navigate to your domain's git settings
+   - Disable the built-in autodeploy (GitHub Actions now handles it)
+
+4. **Manually add forms to pages** (temporary — until we can re-run setup):
+   - Log into https://salescompass.net/wp-admin
+   - Edit Home page (ID=5) and Contact page (ID=10)
+   - Add a Shortcode block with `[wpforms id="13"]` to display the inquiry form
 
 ## Studio state
 
-- WP Studio: `http://localhost:8882` (admin: `http://localhost:8882/wp-admin`)
-- All 8 pages published with block content, IDs:
-  - home=49, services=50, sales-coaching=25, ai-automation=19
-  - case-studies=53, contact=54, privacy-policy=3, terms-of-service=56
-- `show_on_front=page`, `page_on_front=49`
-- All pages: `_wp_page_template=page-no-title`
-- WPForms not yet installed (Batch B, separate branch)
+- WP Studio: `http://localhost:8882` (reference; not deployed)
+- All 8 pages + WPForms form structure defined in theme setup scripts
+- Media files synced to Hostinger
 
-## Blockers / open questions
+## Blockers / Notes
 
-None.
+- SSH password auth was flaky (multiple session drops) — consider using SSH key auth instead of password for future work
+- Setup scripts created pages with different IDs on Hostinger vs. Studio (different DB state) — placeholder search in setup-pages.php should handle this more gracefully
