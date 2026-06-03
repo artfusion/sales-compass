@@ -1,21 +1,27 @@
-<!-- wp:group {"tagName":"header","className":"site-header","style":{"color":{"background":"#ffffff"},"border":{"bottom":{"color":"var(--wp--preset--color--gray-200)","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var(--wp--preset--spacing--sm)","bottom":"var(--wp--preset--spacing--sm)","left":"var(--wp--preset--spacing--md)","right":"var(--wp--preset--spacing--md)"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<!-- wp:group {"tagName":"header","className":"site-header","style":{"color":{"background":"#ffffff"},"border":{"bottom":{"color":"var(--wp--preset--color--gray-200)","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var(--wp--preset--spacing--sm)","bottom":"var(--wp--preset--spacing--sm)"}}},"layout":{"type":"constrained"}} -->
 <header class="wp-block-group site-header">
 
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"left"},"style":{"spacing":{"blockGap":"var(--wp--preset--spacing--xs)"}}} -->
+	<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"padding":{"left":"var(--wp--preset--spacing--md)","right":"var(--wp--preset--spacing--md)"}}}} -->
 	<div class="wp-block-group">
-		<!-- wp:site-logo {"width":32,"shouldSyncIcon":false} /-->
-		<!-- wp:site-title {"style":{"typography":{"fontWeight":"500","fontSize":"1.5rem"},"color":{"text":"var(--wp--preset--color--ocean-blue)"}}} /-->
+
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"left"},"style":{"spacing":{"blockGap":"var(--wp--preset--spacing--xs)"}}} -->
+		<div class="wp-block-group">
+			<!-- wp:site-logo {"width":32,"shouldSyncIcon":false} /-->
+			<!-- wp:site-title {"style":{"typography":{"fontWeight":"500","fontSize":"1.5rem"},"color":{"text":"var(--wp--preset--color--ocean-blue)"}}} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:navigation {"overlayMenu":"mobile","textColor":"gray-700","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
+			<!-- wp:navigation-link {"label":"Home","url":"/"} /-->
+			<!-- wp:navigation-link {"label":"Services","url":"/services/"} /-->
+			<!-- wp:navigation-link {"label":"Sales Coaching","url":"/sales-coaching/"} /-->
+			<!-- wp:navigation-link {"label":"AI Automation","url":"/ai-automation/"} /-->
+			<!-- wp:navigation-link {"label":"Case Studies","url":"/case-studies/"} /-->
+			<!-- wp:navigation-link {"label":"Contact","url":"/contact/"} /-->
+		<!-- /wp:navigation -->
+
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:navigation {"overlayMenu":"mobile","textColor":"gray-700","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
-		<!-- wp:navigation-link {"label":"Home","url":"/"} /-->
-		<!-- wp:navigation-link {"label":"Services","url":"/services/"} /-->
-		<!-- wp:navigation-link {"label":"Sales Coaching","url":"/sales-coaching/"} /-->
-		<!-- wp:navigation-link {"label":"AI Automation","url":"/ai-automation/"} /-->
-		<!-- wp:navigation-link {"label":"Case Studies","url":"/case-studies/"} /-->
-		<!-- wp:navigation-link {"label":"Contact","url":"/contact/"} /-->
-	<!-- /wp:navigation -->
 
 </header>
 <!-- /wp:group -->
