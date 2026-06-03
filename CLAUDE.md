@@ -23,7 +23,7 @@ Read automatically by Claude Code. Provides project context, conventions, and co
 Sales Compass — a marketing website for a sales consultancy offering infrastructure, coaching, and AI automation services. Currently a static HTML/Tailwind site with a planned migration path to WordPress/Kadence.
 
 - **GitHub repo:** `artfusion/sales-compass` (`main` branch)
-- **Linear project:** Sales Compass Website | Prefix: **SCW-XX** | Workspace: ArtFusion
+- **Linear project:** Sales Compass Website | Team: Sales Compass | Prefix: **SCW-XX** | Workspace: ArtFusion
 
 ## Local Development
 
@@ -90,6 +90,7 @@ Static marketing site (6 production pages) built with HTML + Tailwind CSS (CDN) 
 1. **Before closing or updating issues** — run `list_issues` first to get real IDs. Never assume issue numbers from memory.
 2. **Before creating new issues** — run `list_issues` to confirm they don't already exist.
 3. **Never work from memory** — the Linear MCP is connected. Use it.
+4. **Project:** Sales Compass Website | **Team:** Sales Compass | **Prefix:** SCW-XX | **Workspace:** ArtFusion
 
 ## Verification process
 
