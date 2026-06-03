@@ -15,3 +15,19 @@ Tags: block-theme, full-site-editing, business, blog, custom-colors, custom-logo
 */
 
 /* Styles are driven by theme.json. Add only supplemental CSS that theme.json cannot express. */
+
+/* Sticky header — theme.json cannot express position:sticky */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+/* Footer nav links — gray-400 color + no underline */
+.footer-nav a {
+	color: #9CA3AF;
+	text-decoration: none;
+}
+.footer-nav a:hover {
+	color: #ffffff;
+}

@@ -52,3 +52,20 @@ function salescompass_register_pattern_categories() {
 	);
 }
 add_action( 'init', 'salescompass_register_pattern_categories' );
+
+/**
+ * Allow SVG uploads for the site logo.
+ */
+function salescompass_allow_svg( $mimes ) {
+	$mimes['svg']  = 'image/svg+xml';
+	$mimes['svgz'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'salescompass_allow_svg' );
+add_filter( 'wp_check_filetype_and_ext', static function( $data, $file, $filename ) {
+	if ( substr( $filename, -4 ) === '.svg' ) {
+		$data['ext']  = 'svg';
+		$data['type'] = 'image/svg+xml';
+	}
+	return $data;
+}, 10, 3 );
