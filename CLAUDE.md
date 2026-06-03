@@ -92,7 +92,8 @@ Live site: **https://salescompass.net**, hosted on Hostinger. Deployment is a **
 1. **Before closing or updating issues** — run `list_issues` first to get real IDs. Never assume issue numbers from memory.
 2. **Before creating new issues** — run `list_issues` to confirm they don't already exist.
 3. **Never work from memory** — the Linear MCP is connected. Use it.
-4. **Project:** Sales Compass Website | **Team:** Sales Compass | **Prefix:** SCW-XX | **Workspace:** ArtFusion
+4. **Reflect active work:** set an issue to **In Progress** when you create its feature branch, and to **Done** right after its PR squash-merges.
+5. **Project:** Sales Compass Website | **Team:** Sales Compass | **Prefix:** SCW-XX | **Workspace:** ArtFusion
 
 ## Verification process
 
