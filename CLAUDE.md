@@ -38,15 +38,12 @@ No build step, package manager, or compilation required.
 
 ### WordPress Studio (local WP development)
 
-WP Studio site: `http://localhost:8881`
-Theme directory: `/Users/michael/Studio/sales-compass/wp-content/themes/`
+WP Studio site: `http://localhost:8882` (admin: `http://localhost:8882/wp-admin`)
+Site path: `/Users/michael/Studio/sales-compass/` — theme dir: `wp-content/themes/`
 
-CLI: `studio wp <wp-cli-command>` from the site directory.
+CLI: `studio wp <wp-cli-command> --path="$HOME/Studio/sales-compass"` (or run from the site directory).
 
-**One-time setup:**
-1. Open WordPress Studio → New Site → "sales-compass"
-2. Install Twenty Twenty-Five: `studio wp theme install twentytwentyfive`
-3. Activate Twenty Twenty-Five: `studio wp theme activate twentytwentyfive`
+**Status:** site created and online; **Twenty Twenty-Five active** (`studio wp theme list`). It ships with WordPress core, so no separate install was needed. Migration of page content into WP is tracked as follow-on SCW tickets.
 
 ## Architecture
 
