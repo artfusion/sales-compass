@@ -31,10 +31,17 @@ Hostinger's native "Deploy from GitHub" auto-deploys its `main` branch into
 - WPForms Inquiry Form ID=14, embedded on home (6) + contact (11)
 - SSH is flaky (Hostinger rate-limits rapid auth) — space out calls; consider key auth.
 
-## Known bug → needs a ticket (in the THEME repo now)
-`setup/setup-forms.php` hardcodes Studio page IDs (`49 => home, 54 => contact`) for the form-embed
-step, so it silently skips on any other DB. Live pages were fixed with a one-off slug-based script.
-Fix: change the embed loop to look up pages by slug via `get_page_by_path()`.
+## Repo tidiness (as of this session)
+- **0 open PRs, 0 Actions runs, 0 stale branches.** Failed deploy-workflow runs were deleted.
+- PRs #16 and #20 (abandoned SSH-over-CI attempts) are **closed + annotated** as superseded by SCW-70. GitHub can't delete PRs, so they remain under the "Closed" filter only — the default Open view is empty. Not loose ends.
 
-## Blockers / open questions
-None. Site is live and the deploy pipeline is verified.
+## Open follow-ups (optional, non-blocking)
+1. **Rotate the Hostinger SSH password** in hPanel — it was shared in chat multiple times during recovery. (Current password still works for SSH ops.)
+2. **File a ticket in the THEME repo** for the `setup/setup-forms.php` bug: it hardcodes Studio page IDs (`49 => home, 54 => contact`) for the form-embed step, so it silently skips on any other DB. Live pages were fixed with a one-off slug-based script. Fix: switch the embed loop to `get_page_by_path()` slug lookup. (Script now lives in `artfusion/sales-compass-theme`.)
+3. **Decide on [SCW-63](https://linear.app/artfusion/issue/SCW-63)** ("decide WP hosting approach") — still In Progress; its deploy-mechanism portion is resolved by SCW-70. Close it, or keep open for other launch tasks (DNS/SSL/etc.).
+
+## NOTE for next session
+This handoff was updated **uncommitted** in the working tree (no active feature branch after the SCW-70 merge; avoided a throwaway PR). Commit it onto the next feature branch you create, or discard if stale.
+
+## Blockers
+None. Site is live and the deploy pipeline is verified end-to-end.
