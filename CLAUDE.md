@@ -18,6 +18,20 @@ Read automatically by Claude Code. Provides project context, conventions, and co
 
 ---
 
+## Session handoff
+
+**Before starting any work, read `handoff.md`** at the project root if it exists.
+
+**Before ending any session** (usage limit, context switch, task complete), update `handoff.md` with:
+- Current branch and ticket(s) in flight
+- Exactly where work stopped (last completed step + next step)
+- Any blockers, open questions, or decisions made
+- Studio/DB state relevant to resuming (page IDs, option values, etc.)
+
+The file lives at the project root and is committed to git as part of the active feature branch. It is the authoritative handoff for any agent or session picking up mid-task.
+
+---
+
 ## Project
 
 Sales Compass — a marketing website for a sales consultancy offering infrastructure, coaching, and AI automation services. Currently a static HTML/Tailwind site with a planned migration path to WordPress/Twenty Twenty-Five.
