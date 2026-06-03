@@ -44,16 +44,17 @@ Sales Compass — a marketing website for a sales consultancy offering infrastru
 ### Static site
 
 ```bash
-python3 -m http.server 3000
+cd static && python3 -m http.server 3000
 # → http://localhost:3000
 ```
 
-No build step, package manager, or compilation required.
+No build step, package manager, or compilation required. Static site files live in `static/`.
 
 ### WordPress Studio (local WP development)
 
 WP Studio site: `http://localhost:8882` (admin: `http://localhost:8882/wp-admin`)
 Site path: `/Users/michael/Studio/sales-compass/` — theme dir: `wp-content/themes/`
+Theme source (symlinked): `wp-content/themes/sales-compass/` in this repo
 
 CLI: `studio wp <wp-cli-command> --path="$HOME/Studio/sales-compass"` (or run from the site directory).
 
@@ -63,16 +64,20 @@ CLI: `studio wp <wp-cli-command> --path="$HOME/Studio/sales-compass"` (or run fr
 
 Static marketing site (8 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. **Active migration to WordPress/Twenty Twenty-Five theme** (see WordPress Studio section).
 
-**Pages** (directory-based clean URLs — each is an `index.html` in its own folder):
-- `index.html` — Homepage
-- `services/`, `sales-coaching/`, `ai-automation/`, `case-studies/`, `contact/`, `privacy-policy/`, `terms-of-service/`
+**Repo structure (post-restructure for Hostinger deployment):**
+- `wp-content/themes/sales-compass/` — the WordPress block theme (deploys to `public_html/wp-content/themes/sales-compass/`)
+- `static/` — static HTML reference site (not deployed to WP; local dev only)
 
-**Assets:**
-- `assets/css/main.css` — Design system with CSS custom properties, structured for future WordPress enqueuing
-- `assets/js/main.js` — IIFE pattern, exposes `window.SalesCompass`, handles navigation and smooth scroll
-- `assets/images/` — Production images
-- `redesign/` — Full duplicate of the site used as a deployment staging area
-- `uxpilot/` — UX Pilot design mockups (reference only, not production)
+**Static site pages** (under `static/`, directory-based clean URLs):
+- `static/index.html` — Homepage
+- `static/services/`, `static/sales-coaching/`, `static/ai-automation/`, `static/case-studies/`, `static/contact/`, `static/privacy-policy/`, `static/terms-of-service/`
+
+**Static assets:**
+- `static/assets/css/main.css` — Design system (reference only)
+- `static/assets/js/main.js` — IIFE nav/scroll (reference only)
+- `static/assets/images/` — Production images (reference only)
+- `static/redesign/` — UX Pilot staging mockups
+- `static/uxpilot/` — UX Pilot design mockups
 
 ## Key Conventions
 
