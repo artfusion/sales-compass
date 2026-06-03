@@ -3,18 +3,20 @@
 **Branch:** `feature/scw-43-50-page-assembly`
 **Active tickets:** SCW-43, SCW-44, SCW-45, SCW-46, SCW-47, SCW-48, SCW-49, SCW-50 (all In Progress)
 
-## Where we stopped
+## Status: BATCH A COMPLETE — awaiting PR merge
 
-All 8 M3 pages were created in WP Studio with inline block markup, `page-no-title` template, and correct reading settings in a prior session. The git artifact (setup-pages.php) was not committed. Now writing the seed script and running final verification.
+All deliverables done:
+- ✅ CLAUDE.md + handoff.md convention committed
+- ✅ `wp-theme/sales-compass/setup/setup-pages.php` written and committed
+- ✅ All 8 pages: HTTP 200, correct content, `page-no-title` template
+- ✅ Reading settings: `show_on_front=page`, `page_on_front=49`
+- ✅ FAQ Details: expand/collapse natively (verified AI Automation page)
+- ⚠️ Nav hamburger at ≤767px: Chrome extension couldn't reach mobile viewport — verify manually in browser
 
 ## Next steps
 
-1. ~~CLAUDE.md + handoff.md committed~~ ✓
-2. Extract full `post_content` for all 8 pages via `studio wp post get`
-3. Write `wp-theme/sales-compass/setup/setup-pages.php` seed script
-4. SCW-54 partial: verify nav hamburger (≤767px) + FAQ Details on coaching/AI automation pages
-5. Commit `setup-pages.php` + updated `handoff.md`
-6. Open PR → squash merge → mark SCW-43→50 Done in Linear
+1. Review + squash merge the PR → mark SCW-43→50 Done in Linear
+2. Start Batch B (`feature/scw-51-54-wpforms`): install WPForms Lite, build inquiry form, embed on homepage + contact
 
 ## Studio state
 
