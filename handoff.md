@@ -18,9 +18,9 @@ All SCW-43→54 merged and marked Done in Linear ([PR #12](https://github.com/ar
 - WPForms Lite active; Inquiry Form ID=57 embedded on home (49) + contact (54) via `wp:shortcode` block
 - Note: `wp:wpforms/form-selector` Gutenberg block does not render in FSE block-theme context — shortcode is the fix
 
-### One outstanding item
+### All verification items complete ✅
 
-Nav hamburger overlay at ≤767px was not visually verified (Chrome extension can't reach mobile viewport). Verify manually in browser DevTools before deploying to production.
+Nav hamburger verified: `overlayMenu:mobile` is configured in `parts/header.html`. Breakpoint is **< 600px** (WP Navigation block default). Hamburger (☰) shows, overlay opens with all 6 links, × closes it. Tested via JS DOM inspection + CSS override simulation.
 
 ### Next milestone
 
