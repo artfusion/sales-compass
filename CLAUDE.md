@@ -20,7 +20,7 @@ Read automatically by Claude Code. Provides project context, conventions, and co
 
 ## Project
 
-Sales Compass — a marketing website for a sales consultancy offering infrastructure, coaching, and AI automation services. Currently a static HTML/Tailwind site with a planned migration path to WordPress/Kadence.
+Sales Compass — a marketing website for a sales consultancy offering infrastructure, coaching, and AI automation services. Currently a static HTML/Tailwind site with a planned migration path to WordPress/Twenty Twenty-Five.
 
 - **GitHub repo:** `artfusion/sales-compass` (`main` branch)
 - **Linear project:** Sales Compass Website | Team: Sales Compass | Prefix: **SCW-XX** | Workspace: ArtFusion
@@ -45,12 +45,12 @@ CLI: `studio wp <wp-cli-command>` from the site directory.
 
 **One-time setup:**
 1. Open WordPress Studio → New Site → "sales-compass"
-2. Install Kadence: `studio wp theme install kadence`
-3. Activate Kadence: `studio wp theme activate kadence`
+2. Install Twenty Twenty-Five: `studio wp theme install twentytwentyfive`
+3. Activate Twenty Twenty-Five: `studio wp theme activate twentytwentyfive`
 
 ## Architecture
 
-Static marketing site (6 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. Planned migration to WordPress/Kadence theme.
+Static marketing site (6 production pages) built with HTML + Tailwind CSS (CDN) + vanilla JS. Planned migration to WordPress/Twenty Twenty-Five theme.
 
 **Pages:**
 - `index.html` — Homepage
