@@ -6,11 +6,11 @@ Read automatically by Claude Code. Provides project context, conventions, and co
 
 ## NON-NEGOTIABLE RULES — READ FIRST
 
-1. **No work without a Linear ticket.** No edits, no commits, no branches, no `git` operations on this repo until an SCW-XX ticket exists for the work and the user has said go. If you discover work mid-task (a bug, a refactor, a "while I'm here"), STOP. Create the ticket. Wait for the go-ahead.
+1. **No work without a Linear ticket.** No edits, no commits, no branches, no `git` operations on this repo until an SCW-XX ticket exists for the work and the user has said go. If you discover work mid-task (a bug, a refactor, a "while I'm here"), STOP. Create the ticket. Wait for the go-ahead. _(Exception: docs-only Markdown changes — see rule 3.)_
 
 2. **Every ticket in a planned roadmap must be created in Linear before any code is written.** Referencing ticket numbers in conversation is not the same as creating them. Linear is the source of truth.
 
-3. **No commits to `main`.** All work happens on `feature/scw-XX-slug`, opens a PR, merges via `gh pr merge --squash --delete-branch`.
+3. **No commits to `main`** (code). All code work happens on `feature/scw-XX-slug`, opens a PR, merges via `gh pr merge --squash --delete-branch`. **Exception — docs:** changes limited to Markdown (`.md`) files (e.g. `handoff.md`, `README.md`, `CLAUDE.md`, `GEMINI.md`) may be committed **directly to `main`** with no branch, PR, or Linear ticket. Keep such commits docs-only — if a commit also touches non-`.md` files, the full branch/PR/ticket flow applies.
 
 4. **One ticket = one branch = one PR.** Do not pile multiple tickets onto the same branch.
 
@@ -106,7 +106,7 @@ This monorepo (docs, static reference site) has no automated deploy.
 
 | Branch | Purpose |
 |---|---|
-| `main` | Stable. PRs only — no direct push. |
+| `main` | Stable. Code via PRs only — no direct push. Docs-only (`.md`) commits may go direct (see rule 3). |
 | `feature/scw-XX-slug` | Single-ticket branch for isolated changes. |
 | `feature/vX.Y-description` | Release branch for a cohesive batch of tickets. |
 
