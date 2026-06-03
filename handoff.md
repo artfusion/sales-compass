@@ -6,7 +6,7 @@ SCW-43→50 merged ([PR #12](https://github.com/artfusion/sales-compass/pull/12)
 
 ---
 
-## M3 Batch B — NEXT
+## M3 Batch B — DONE ✅ (awaiting PR merge)
 
 **Branch to create:** `feature/scw-51-54-wpforms`
 **Tickets:** SCW-51, SCW-52, SCW-53, SCW-54
