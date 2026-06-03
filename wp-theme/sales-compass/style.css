@@ -23,6 +23,35 @@ Tags: block-theme, full-site-editing, business, blog, custom-colors, custom-logo
 	z-index: 50;
 }
 
+/* Header nav links — match static site px-4 py-2 font-medium hover:ocean-blue */
+.site-header .wp-block-navigation a.wp-block-navigation-item__content {
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.site-header .wp-block-navigation a.wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--ocean-blue);
+}
+
+/* Active page indicator — ocean-blue text + 2px underline (aria-current is how FSE nav marks it) */
+.site-header .wp-block-navigation a[aria-current="page"] {
+	color: var(--wp--preset--color--ocean-blue);
+	border-bottom: 2px solid var(--wp--preset--color--ocean-blue);
+}
+
+/* Mobile overlay links — larger, readable */
+.wp-block-navigation__responsive-container.is-menu-open a.wp-block-navigation-item__content {
+	padding: 0.75rem 1.5rem;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open a.wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--ocean-blue);
+}
+
 /* Footer nav links — gray-400 color + no underline */
 .footer-nav a {
 	color: #9CA3AF;

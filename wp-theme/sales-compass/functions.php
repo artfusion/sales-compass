@@ -31,6 +31,8 @@ add_action( 'after_setup_theme', 'salescompass_setup' );
  * Performance subsetting/self-hosting deferred to SCW-61 (QA/perf pass).
  */
 function salescompass_enqueue_assets() {
+	wp_enqueue_style( 'sales-compass-style', get_stylesheet_uri(), array(), SALESCOMPASS_VERSION );
+
 	wp_enqueue_script(
 		'font-awesome',
 		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js',
